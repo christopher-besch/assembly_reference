@@ -1,5 +1,9 @@
 # Linux x86_64 Assembly
 
+## Links
+
+- [linux64.inc](https://pastebin.com/N1ZdmhLw)
+
 ## Commands
 
 - `nasm -f elf64 -o hello.o hello.asm`
@@ -29,18 +33,6 @@
 Usually where registers are used, pointers can also be used.
 Like instead of `pop reg` `pop [label]` to pop a value off the stack directily into memory.
 
-## System Call Inputs by Registers
-
-| Argument | Registers |
-| :------- | :-------- |
-| ID       | rax       |
-| 1        | rdi       |
-| 2        | rsi       |
-| 3        | rdx       |
-| 4        | r10       |
-| 5        | r8        |
-| 6        | r9        |
-
 ## System Calls
 
 Can be found [here](https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/)
@@ -50,6 +42,30 @@ Can be found [here](https://blog.rchapman.org/posts/Linux_System_Call_Table_for_
 | 0   | sys_read    | unsigned int fd (filedescriptor) | char\* buf | size_t count |     |     |     |
 | 1   | sys_write   | unsigned int fd                  | char\* buf | size_t count |     |     |     |
 | 60  | sys_exit    | int error_code                   |            |              |     |     |     |
+
+## Flags
+
+| Flag Symbol | Description      |
+| :---------- | ---------------- |
+| CF          | carry            |
+| PF          | parity           |
+| ZF          | zero             |
+| SF          | sign             |
+| OF          | overflow         |
+| AF          | adjust           |
+| IF          | interrup enabled |
+
+Individual flags are part of a register.
+
+## Pointers
+
+32- and 16-bit versions in parentheses
+
+| Name          | Meaning            | Desciption                             |
+| :------------ | ------------------ | -------------------------------------- |
+| rip (eip, ip) | index pointer      | address to be executed in control flow |
+| rsp (esp, sp) | stack pointer      | top of stack                           |
+| rbp (ebp, bp) | stack base pointer | bottom of stack                        |
 
 ## Conditional Jump
 
