@@ -90,17 +90,27 @@ unsigned version in parentheses
 
 unsigned version in parentheses
 
-| Name               | Description     |
-| :----------------- | :-------------- |
-| add a, b           | `a = a+b`       |
-| sub a, b           | `a = a-b`       |
-| mul reg (imul reg) | `rax = rax*reg` |
-| div reg (idiv reg) | `rax = raw/reg` |
-| neg reg            | `reg = -reg`    |
-| inc reg            | `reg = reg+1`   |
-| dec reg            | `reg = reg-1`   |
-| adc a, b           | `a = a+b+CF`    |
-| sbb a, b           | `a = a-b-CF`    |
+| Name           | Description                  |
+| :------------- | :--------------------------- |
+| add a, b       | `a = a+b`                    |
+| sub a, b       | `a = a-b`                    |
+| mul a (imul a) | `rax = rax*a`                |
+| div a (idiv a) | `rax = rax/a`, `rdx = rax%a` |
+| neg a          | `a = -a`                     |
+| inc a          | `a = a+1`                    |
+| dec a          | `a = a-1`                    |
+| adc a, b       | `a = a+b+CF`                 |
+| sbb a, b       | `a = a-b-CF`                 |
+
+div operates on rax and rdx.
+To prevent the concatenation, use:
+
+```asm
+mov rdx, 0
+div rbx
+```
+
+rdx contains the remainder in the end.
 
 ## NASM Macros
 

@@ -1,6 +1,6 @@
 ; data definition
 section .data
-    ; <- name assigned to address in memory of data
+    ; <- name assigned to address in memory of data -> pointer to data
     ;    <- define bytes
     ;                       <- newline
     text db "Hello, World!",10

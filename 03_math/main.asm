@@ -23,7 +23,7 @@ _print_rax_digit:
     ; ascii of '0'
     add rax, 48
     ; [digit] -> address of digit
-    ; al -> least significant bit of rax
+    ; al -> least significant byte of rax
     ; -> newline doesn't get touched
     mov [digit], al
     mov rax, 1
