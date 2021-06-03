@@ -7,9 +7,24 @@
 
 ## Registers
 
-<img src="registers.png">
-
-Source: [x86_64 Linux Assembly #2 - "Hello, World!" Breakdown](https://www.youtube.com/watch?v=BWRR3Hecjao&list=PLetF-YjXm-sCH6FrTz4AQhfH6INDQvQSn&index=2)
+| 8-bit | 16-bit | 32-bit | 64-bit |
+| :---- | :----- | :----- | :----- |
+| al    | ax     | eax    | rax    |
+| bl    | bx     | ebx    | rbx    |
+| cl    | cx     | ecx    | rcx    |
+| dl    | dx     | edx    | rdx    |
+| sil   | si     | esi    | rsi    |
+| dil   | di     | edi    | rdi    |
+| bpl   | bp     | ebp    | rbp    |
+| spl   | sp     | esp    | rsp    |
+| r8b   | r8w    | r8d    | r8     |
+| r9b   | r9w    | r9d    | r9     |
+| r10b  | r10w   | r10d   | r10    |
+| r11b  | r11w   | r11d   | r11    |
+| r12b  | r12w   | r12d   | r12    |
+| r13b  | r13w   | r13d   | r13    |
+| r14b  | r14w   | r14d   | r14    |
+| r15b  | r15w   | r15d   | r15    |
 
 Usually where registers are used, pointers can also be used.
 Like instead of `pop reg` `pop [label]` to pop a value off the stack directily into memory.
@@ -73,7 +88,7 @@ unsigned version in parentheses
 
 ## NASM Macros
 
-```
+```asm
 ; prevent symbol collision
 %macro freeze 0
 %%loop:
