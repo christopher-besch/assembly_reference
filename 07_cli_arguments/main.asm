@@ -7,12 +7,15 @@ section .text
     global _start
 
 _start:
+    ; read first argument
+    pop rax
     pop rax
     pop rax
     call _print
 
     ; print newline
-    mov [buffer], 10
+    mov rax, 10
+    mov [buffer], rax
     mov rax, 1
     mov rdi, 1
     mov rsi, buffer
