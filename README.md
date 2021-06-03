@@ -70,3 +70,13 @@ unsigned version in parentheses
 | dec reg            | `reg = reg-1`   |
 | adc a, b           | `a = a+b+CF`    |
 | sbb a, b           | `a = a-b-CF`    |
+
+## NASM Macros
+
+```
+; prevent symbol collision
+%macro freeze 0
+%%loop:
+    jmp %%loop
+%endmacro
+```
