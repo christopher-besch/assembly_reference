@@ -30,7 +30,6 @@ _print_rax:
     ; get each digit of base-10 number in reverse
 _print_rax_loop:
     ; divide by 10
-    ; todo: required?
     ; rdx shouldn't mess up division
     mov rdx, 0
     mov rbx, 10
